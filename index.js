@@ -28,3 +28,15 @@ const typeCheck = (billAmount, tipRate) => {
     return true;
   }
 };
+
+const displayRes = () => {
+  let isValid = false;
+  while (!isValid) {
+    promptValues();
+    isValid = typeCheck(billAmount, tipRate);
+  }
+  tip = calculateTip(+billAmount, +tipRate);
+  console.log(`Tip: $${tip}`);
+  console.log(`Total Amount: $${+billAmount + tip}`);
+};
+displayRes()
